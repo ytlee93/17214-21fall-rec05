@@ -13,6 +13,12 @@ public class InheritanceSortedIntList extends SortedIntList {
     // the number of attempted element insertions
     private int totalAdded;
 
+    public InheritanceSortedIntList(){
+        super();
+        totalAdded = 0;
+    }
+
+
     /**
      * Gets the total number of attempted int insertions to the list since it
      * was created.
@@ -22,6 +28,18 @@ public class InheritanceSortedIntList extends SortedIntList {
     public int getTotalAdded()
     {
         return this.totalAdded;
+    }
+
+    @Override
+    public boolean add(int num){
+        this.totalAdded++;
+        return super.add(num);
+    }
+
+    @Override
+    public boolean addAll(IntegerList list) {
+//        this.totalAdded += list.size();   // calls add -> count will repeat
+        return super.addAll(list);
     }
 
 }

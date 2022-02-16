@@ -12,9 +12,11 @@ package edu.cmu.cs.cs214.rec04;
 
 // HINT: Take a look at the UML diagram to see what DelegationSortedIntList
 //       should implement.
-public class DelegationSortedIntList {
+public class DelegationSortedIntList implements IntegerList{
     // the number of attempted element insertions
     private int totalAdded;
+    private SortedIntList sortedIntList;
+
 
     /**
      * Gets the total number of attempted int insertions to the list since it.
@@ -27,4 +29,12 @@ public class DelegationSortedIntList {
         return totalAdded;
     }
 
+    public boolean add(int num){
+        totalAdded++;
+        return true;
+    }
+
+    public boolean addList(IntegerList list){
+
+    }
 }
